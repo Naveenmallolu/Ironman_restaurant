@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% csrf_token %}
+<section>
+  <article>
+    <h1>Make a reservation</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" id="button">
+        </form>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <div class="videowrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30617.478116997463!2d80.58470592095757!3d16.41544007473005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f749b2aca3f5%3A0xacc0312243ee0203!2sPedavadlapudi%2C%20Andhra%20Pradesh%20522302!5e0!3m2!1sen!2sin!4v1678256171877!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <!--End col-->
+      <!-- <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30617.478116997463!2d80.58470592095757!3d16.41544007473005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f749b2aca3f5%3A0xacc0312243ee0203!2sPedavadlapudi%2C%20Andhra%20Pradesh%20522302!5e0!3m2!1sen!2sin!4v1678256171877!5m2!1sen!2sin" 
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div> -->
+    <!--End row-->
+
+    
+
+
+  </article>
+</section>
+{% endblock %}
