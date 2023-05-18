@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-)p-ghyjr87meb-0s!g_jl@yu@_wr+=40(^ey7_9qsp7#eouu@u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://ironmanrestaurant.onrender.com']
 
 
 # Application definition
