@@ -12,8 +12,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#for render
+
+import environ
+env=environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)p-ghyjr87meb-0s!g_jl@yu@_wr+=40(^ey7_9qsp7#eouu@u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -74,6 +81,7 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#sqllite database settings
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,16 +89,23 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ironman',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST':'localhost'
-    }
-}
+#postgresql database settings
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ironman',
+#         'USER': 'postgres',
+#         'PASSWORD': '1234',
+#         'HOST':'localhost'
+#     }
+# }
 
+#Render postgresql database settings (live)
+import dj_database_url
+
+DATABASES={
+    'default': dj_database_url.parse(env('DATABASE_URL')) 
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
