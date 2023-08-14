@@ -10,6 +10,10 @@ urlpatterns = [
     # Add the remaining URL path configurations here
     path('menu/',views.menu, name="menu"),
     path('menu_item/<int:pk>/', views.display_menu_item, name="menu_item"),  
+    path('register',views.register, name="register"),
+    path('login',views.login, name="login"),
+    path('logout',views.logout, name="logout"),
+    
 ]
 
 
